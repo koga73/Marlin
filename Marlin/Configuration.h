@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "AJ Savino | Ender 3 Pro | 20221008" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "AJ Savino | Ender 3 Pro | 20221129" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1274,9 +1274,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION 500         // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION 500 // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION 500  // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION 3200         // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION 100  // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION 3200  // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -1317,9 +1317,11 @@
  * See:
  *   https://reprap.org/forum/read.php?1,739819
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
+ *   d = 0.4 * mm * mm / accel
+ *   d = 0.4 * 7 * 7 / 3200
  */
 #if DISABLED(CLASSIC_JERK)
-#define JUNCTION_DEVIATION_MM 0.08 // (mm) Distance from real junction edge
+#define JUNCTION_DEVIATION_MM 0.02 // (mm) Distance from real junction edge
 #define JD_HANDLE_SMALL_SEGMENTS   // Use curvature estimation instead of just the junction angle
                                    // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
