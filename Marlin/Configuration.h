@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "AJ Savino | Ender 3 Pro | 20221129" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "AJ Savino | Ender 3 Pro | 20221218" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1226,7 +1226,7 @@
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
   {                                 \
-    80, 80, 400, 137             \
+    80, 80, 400, 137.580             \
   }
 
 /**
@@ -1236,7 +1236,7 @@
  */
 #define DEFAULT_MAX_FEEDRATE \
   {                          \
-    500, 500, 5, 25          \
+    500, 500, 25, 50          \
   }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
@@ -1255,7 +1255,7 @@
  */
 #define DEFAULT_MAX_ACCELERATION \
   {                              \
-    5000, 5000, 100, 5000        \
+    5000, 5000, 500, 5000        \
   }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
@@ -1275,7 +1275,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION 3200         // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION 100  // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION 500  // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION 3200  // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -1334,7 +1334,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1612,7 +1612,7 @@
  */
 #define NOZZLE_TO_PROBE_OFFSET \
   {                            \
-    -45, -7, 0                 \
+    -45, -7, -2.2                 \
   }
 
 // Most probes should stay away from the edges of the bed, but
